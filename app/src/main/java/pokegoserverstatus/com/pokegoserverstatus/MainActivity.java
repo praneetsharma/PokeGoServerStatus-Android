@@ -17,15 +17,15 @@ public class MainActivity extends AppCompatActivity {
         HandleResponse response = new HandleResponse();
         response.requestServerStatus();
 
-        if (HandleResponse.serverStatus == 0) {
+        if (HandleResponse.serverStatus == HandleResponse.DOWN_STATUS) {
             tv.setText("DOWN");
             tv.setBackgroundColor(Color.RED);
             tv.setTextColor(Color.WHITE);
-        } else if (HandleResponse.serverStatus == 1) {
+        } else if (HandleResponse.serverStatus == HandleResponse.OVERLOADED_STATUS) {
             tv.setText("OVERLOADED");
             tv.setBackgroundColor(Color.YELLOW);
             tv.setTextColor(Color.WHITE);
-        } else if (HandleResponse.serverStatus == 2) {
+        } else if (HandleResponse.serverStatus == HandleResponse.UP_STATUS) {
             tv.setText("UP");
             tv.setBackgroundColor(Color.GREEN);
             tv.setTextColor(Color.WHITE);
